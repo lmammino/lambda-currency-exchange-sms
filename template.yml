@@ -1,0 +1,46 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+Description: 'An AWS lambda function that sends you an SMS (using Twilio) with today exchange rate for a give currency pair'
+
+Parameters:
+  currencyFrom:
+    Description: The curency code from which you want to fetch the exchanges (e.g. 'GBP')
+    Type: String
+  currencyTo:
+    Description: The curency code to which you want to fetch the exchanges (e.g. 'EUR')
+    Type: String
+  twilioAccount:
+    Description: Your Twilio account id (e.g. 'abcdefghijklmnopqrstuxywz123456789')
+    Type: String
+  twilioApiKey:
+    Description: Your Twilio api key (e.g. '1234567890abcdef1234567890abcdef')
+    Type: String
+  sendSmsFrom:
+    Description: Your Twilio source phone number (e.g. '+3530123456789')
+    Type: String
+  sendSmsTo:
+    Description: Your destination phone number (e.g. '+3530234567890')
+    Type: String
+
+Resources:
+  CurencyExchangeSchedule:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: ./.cloudformation/src.zip
+      Handler: index.handler
+      Runtime: nodejs6.10
+      MemorySize: 256
+      Timeout: 20
+      Events:
+        Timer:
+          Type: Schedule
+          Properties:
+            Schedule: rate(1 day)
+      Environment:
+        Variables:
+          CURRENCY_FROM: !Ref currencyFrom
+          CURRENCY_TO: !Ref currencyTo
+          TWILIO_ACCOUNT: !Ref twilioAccount
+          TWILIO_API_KEY: !Ref twilioApiKey
+          SEND_SMS_FROM: !Ref sendSmsFrom
+          SEND_SMS_TO: !Ref sendSmsTo

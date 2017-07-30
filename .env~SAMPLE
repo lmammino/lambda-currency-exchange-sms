@@ -1,0 +1,8 @@
+export BUCKET=your-unique-bucket-name
+export STACK_NAME=currency-exchange-lambda
+export CURRENCY_FROM="GBP"
+export CURRENCY_TO="EUR"
+export TWILIO_ACCOUNT="abcdefghijklmnopqrstuxywz123456789"
+export TWILIO_API_KEY="1234567890abcdef1234567890abcdef"
+export SEND_SMS_FROM="+3530123456789"
+export SEND_SMS_TO="+3530234567890"

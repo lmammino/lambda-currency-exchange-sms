@@ -1,0 +1,25 @@
+{
+  "name": "lambda-currency-exchange-sms",
+  "version": "1.0.0",
+  "description": "An AWS lambda function that sends you an SMS (using Twilio) with today exchange rate for a give currency pair",
+  "main": "index.js",
+  "repository": "github:lmammino/lambda-currency-exchange-sms",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "lambda",
+    "aws",
+    "serverless",
+    "currency",
+    "exchange rates",
+    "twilio",
+    "sms"
+  ],
+  "author": "Luciano Mammino",
+  "license": "MIT",
+  "dependencies": {
+    "request": "^2.81.0",
+    "request-promise-native": "^1.0.4"
+  }
+}
