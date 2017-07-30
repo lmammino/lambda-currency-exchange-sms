@@ -38,7 +38,7 @@ Where:
  - `BUCKET`: is the name of your S3 bucket that will contain the code to be deployed to AWS Lambda
  - `STACK_NAME`: the stack name for this project as it will appear in your cloudformation console
  - `CURRENCY_FROM`: The currency code from which you want to fetch the exchanges
- - `CURRENCY_TO`: The curency code to which you want to fetch the exchanges
+ - `CURRENCY_TO`: The currency code to which you want to fetch the exchanges
  - `TWILIO_ACCOUNT`: Your Twilio account id
  - `TWILIO_API_KEY`: Your Twilio api key
  - `SEND_SMS_FROM`: Your Twilio source phone number
@@ -95,7 +95,7 @@ To package the application you can use the `package` script contained in this pr
 Once your app is packaged you are ready to deploy it on AWS with the `deploy` command:
 
 ```bash
-./deploy
+./deploy.sh
 ```
 
 
