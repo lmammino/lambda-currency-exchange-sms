@@ -2,7 +2,7 @@
 
 This a simple AWS lambda written in Node.js (>= 6.10) that allows you to monitor the exchange rate of a given currency pair and get an SMS every day (through [Twilio](https://www.twilio.com) APIs).
 
-![Sample message received every day (Today you get 1.12 EUR for 1 GBP)](http://www.iphonefaketext.com/screens/MzM2NTA1.jpg)
+![Sample message received every day (Today you get 1.12 EUR for 1 GBP)](/image.jpg)
 
 
 ## Requirements

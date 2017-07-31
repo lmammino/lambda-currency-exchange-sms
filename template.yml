@@ -35,7 +35,7 @@ Resources:
         Timer:
           Type: Schedule
           Properties:
-            Schedule: rate(1 day)
+            Schedule: cron(00 18 ? * * *)
       Environment:
         Variables:
           CURRENCY_FROM: !Ref currencyFrom
